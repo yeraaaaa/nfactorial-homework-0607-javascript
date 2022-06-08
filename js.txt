@@ -1,0 +1,145 @@
+//1. Переменные - let, const
+let employee = "Elon Musl";
+const ADRESS = "Silicon Valley";
+
+//2. Типы данных - string, number, boolean, null, undefined
+const SHOP_NAME = "Dalida's IT Unicorn Company";
+let managers = 20
+let companyIsOpen = true
+let laziness = null
+let games;
+
+//3. Объекты - создание, добавление и удаление свойства (через прямые скобки тоже), добавление функции в объект
+let technology = {
+    name: "DalidaPhone",
+    price: 100,
+    problems: 0
+}
+technology.highQuality = true;
+delete technology.problems
+technology["origin"] = "Kazakhstan"
+let metal = "gold"
+technology.metal = metal
+technology.sell = function () {
+    console.log("it was sold for 10b$")
+}
+
+//4. Массивы - использовать все методы, которые мы прошли. Не забывать про map, filter, rest и spread операторы. Еще slice ;)
+let phones = [
+    "iDalida",
+    "Dalidasung",
+    "Dalidawei"
+    ]
+phones.push("Dalidokia")
+phones.pop()
+phones.shift()
+phones.unshift("Dalidmi")
+let tablets = ["ipadalida", "dalidanovo"]
+let mobileDevices = phones.concat(tablets)
+const salaries = [10, 20, 30, 40];
+const newSalaries = salaries.map(myFunction)
+function myFunction(num) {
+  return num * 10;
+}
+const highSalaries = salaries.filter(checkHigh);
+function checkHigh(num) {
+  return num > 20;
+}
+function totalSalariesOfLastTwo(a, b, ...salariesOfLastTwo) {
+  let total = 0;
+  for (const salary of salariesOfLastTwo) {
+    total += salary;
+  }
+  return total;
+}
+function sum(x, y, z, a) {
+  return x + y + z + a;
+}
+const salariesOfFirstTillSecond = salaries.slice(0, 2)
+
+//5. Сравнения - нестрогое и строгое, условный оператор, оператор нулевого слияния, преобразование к логическому типу, switch
+etiketkaPrice = '04'
+actualPrice = 4
+alert(etiketkaPrice === actualPrice) //if we are STROGIE
+alert(etiketkaPrice == actualPrice) //if we are DOBRYE
+if (etiketkaPrice == actualPrice) {
+    console.log("prices are matching")
+} else {
+    console.log("make them match")
+}
+let priceMatch = (etiketkaPrice == actualPrice) ? "true" : "false"
+console.log(priceMatch)
+let selectedTechnology;
+//let finalTechnology = selectedTechnology ?? "ipad";
+let selectedTechnology2;
+if (selectedTechnology2) {
+    console.log("buy")
+} else {
+    console.log("no buy")
+}
+let whoIsDalida = "the best businesswoman"
+switch (whoIsDalida) {
+    case "the best businesswoman":
+        console.log("you are right");
+        break;
+    case "not the best businesswoman":
+        console.log("sorry, but this answer deserves huge punch");
+        break;
+}
+
+//6. Циклы - for, while, do while
+for (let i=0; i < mobileDevices.length; i++) {
+    console.log(i);
+}
+let employeeNum = 1;
+while (salaries.length>=employeeNum){
+    console.log(`we have ${employeeNum} employees`);
+    employeeNum ++;
+}
+employeeNum = 1;
+do {
+     console.log(`we have ${employeeNum} employees`);
+     employeeNum ++;
+}
+while(salaries.length>=employeeNum)
+
+//7. Функции - обычные, function expression, arrow functions, destructuring
+function countMobileDevices() {
+    console.log(`length is ${mobileDevices.length}`)
+}
+function canBuyMobileDevices (mobileDevices) {
+    console.log(mobileDevices.includes(mobileDevices))
+}
+function show(name, price) {
+    console.log(`${name} costs ${price}`)
+}
+function show(technology) {
+    console.log(`${technology.name} costs ${technology.price}`)
+}
+function shoq({name, price}) {
+    console.log(`${name} costs ${price}`)
+}
+
+let countMobileDevice = function() {
+    return console.log(`length is ${mobileDevices.length}`)
+}
+let canBuyMobileDevice = (technology) => 
+    mobileDevices.includes(technology);
+let countMo = () =>
+    mobileDevices.length
+
+//8. Импорт и экспорт - named export & import, export & import as, default export & import
+let countMobileDvices = () =>
+    console.log(`length is ${mobileDevices.length}`)
+countMobileDevices()
+let canBuyMobileDvices = (mobileDevices) =>
+    console.log(mobileDevices.includes(mobileDevices))
+export {countMobileDvices, canBuyMobileDvices};
+export {countMobileDvices as cMD, canBuyMobileDvices as CBMD};
+import {countMobileDvices, canBuyMobileDvices} from "./e.js";//там траблы с экспортом и импортом, тк еще не установил убунту Т-Т
+import {cMD, cBMD} from "./e.js";//там траблы с экспортом и импортом, тк еще не установил убунту Т-Т
+import {countMobileDvices as cMD, canBuyMobileDvices as CBMD};
+cMD()
+cBMD("DalidaPhone")
+export default game="game"
+import game from "./e.js"
